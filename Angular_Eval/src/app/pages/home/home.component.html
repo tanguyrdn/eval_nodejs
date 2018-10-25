@@ -1,0 +1,21 @@
+<h1>Homepage</h1>
+<div class="row">
+    <div class="counter" *ngIf="workers">
+    <p>Nombre de salariés : {{workers.length}}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="counter" *ngIf="customers">
+        <p>Nombre de clients : {{customers.length}}</p>
+    </div>
+</div>
+<div class="row">
+        <p>Nombre de projets : </p>
+        <br><br>En cours : 
+        <br>Annulés : 
+        <br>Achevés : 
+        <br>En prospection : 
+</div>
+<a routerLink="/workers" class="btn btn-primary">
+    Liste des salariés
+</a>

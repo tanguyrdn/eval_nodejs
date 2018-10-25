@@ -1,0 +1,56 @@
+<div class="project-details" *ngIf="project">
+
+    <h4 class="mb-5">Projet {{project.name}}</h4>
+  
+        <div class="row">
+  
+            <div class="col-xs-12 col-md-2">
+                <strong>Nom :</strong>
+            </div>
+            <div class="col-xs-12 col-md-10">
+                {{project.name}}
+            </div>
+            <div class="col-xs-12 col-md-10">
+              <strong>Description : </strong>
+          </div>
+          <div class="col-xs-12 col-md-10">
+             {{project.description}}
+          </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-md-10">
+                <strong>Date de début : </strong>
+            </div>
+            <div class="col-xs-12 col-md-10">
+                {{project.start}}
+            </div>
+        </div>
+        <div class="row">    
+            <div class="col-xs-12 col-md-10">
+                <strong>Date de fin : </strong>
+            </div>
+            <div class="col-xs-12 col-md-10">
+                {{project.end}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-md-2">
+              <strong>Montant</strong>
+          </div>
+          <div class="col-xs-12 col-md-10">
+              {{project.value}} €
+          </div>
+          <div class="col-xs-12 col-md-2">
+              <strong>Statut</strong>
+          </div>
+          <div class="col-xs-12 col-md-10">
+              {{project.status}}
+          </div>
+  
+        </div>
+        <div class="mt-5">
+            <a routerLink="/updateproject/{{project._id}}" class="btn btn-primary">Modifier</a>
+            <button type="button" name="button" class="btn btn-danger" (click)="deleteProject(project.id)">Supprimer</button>
+        </div>
+  
+  </div>

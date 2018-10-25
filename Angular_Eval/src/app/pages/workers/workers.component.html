@@ -1,0 +1,43 @@
+<h1>Liste des salariés</h1>
+
+<div class="counter" *ngIf="workers">
+    <p>{{workers.length}} salarié(s)</p>
+</div>
+
+<div class="mt-5 mb-5">
+    <a routerLink='/createworker' class="btn btn-info"><i class="fas fa-user-plus"></i></a>
+</div>
+
+<table class="table">
+
+    <tr>
+        <td>Nom</td>
+        <td>Prénom</td>
+        <td>Username</td>
+        <td>Date de naissance</td>
+        <td>Adresse</td>
+        <td>Téléphone</td>
+        <td>EMail</td>
+        <td>Poste</td>
+        <td></td>
+    </tr>
+
+    <tbody>
+        <tr *ngFor="let worker of workers">
+            <td>{{worker.name}}</td>
+            <td>{{worker.firstname}}</td>
+            <td>{{worker.username}}</td>
+            <td>{{worker.birthdate}}</td>
+            <td>{{worker.adress}}</td>
+            <td>{{worker.phonenumber}}</td>
+            <td>{{worker.mailto}}</td>
+            <td>{{worker.position}}</td>
+            <td>
+                <a routerLink="/worker/{{worker._id}}" class="btn btn-primary"><i class="fas fa-user"></i></a>
+                <a routerLink="/updateworker/{{worker._id}}" class="btn btn-secondary"><i class="fas fa-pen"></i></a>
+                <button type="button" name="button" class="btn btn-danger" (click)="deleteWorker(worker._id)"><i class="fas fa-times"></i></button>
+            </td>
+        </tr>
+    </tbody>
+
+</table>

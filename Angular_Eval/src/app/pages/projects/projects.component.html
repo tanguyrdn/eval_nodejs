@@ -1,0 +1,39 @@
+<h1>Liste des projets</h1>
+
+<div class="counter" *ngIf="projects">
+    <p>{{projects.length}} projet(s)</p>
+</div>
+
+<div class="mt-5 mb-5">
+    <a routerLink='/createproject' class="btn btn-info"><i class="fas fa-folder-plus"></i></a>
+</div>
+
+<table class="table">
+
+    <tr>
+        <td>Nom</td>
+        <td>Description</td>
+        <td>Date de début</td>
+        <td>Date de fin</td>
+        <td>Montant</td>
+        <td>Statut</td>
+        <td></td>
+    </tr>
+
+    <tbody>
+        <tr *ngFor="let project of projects">
+            <td>{{project.name}}</td>
+            <td>{{project.description}}</td>
+            <td>{{project.start}}</td>
+            <td>{{project.end}}</td>
+            <td>{{project.value}} €</td>
+            <td>{{project.status}}</td>
+            <td>
+                <a routerLink="/project/{{project._id}}" class="btn btn-primary"><i class="fas fa-folder"></i></a>
+                <a routerLink="/updateproject/{{project._id}}" class="btn btn-secondary"><i class="fas fa-edit"></i></a>
+                <button type="button" name="button" class="btn btn-danger" (click)="deleteProject(project._id)"><i class="far fa-trash-alt"></i></button>
+            </td>
+        </tr>
+    </tbody>
+
+</table>

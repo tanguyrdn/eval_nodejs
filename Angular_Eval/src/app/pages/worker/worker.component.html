@@ -1,0 +1,68 @@
+<div class="worker-details" *ngIf="worker">
+
+  <h4 class="mb-5">Profil de {{worker.name|uppercase}} {{worker.firstname}}</h4>
+
+      <div class="row">
+
+          <div class="col-xs-12 col-md-2">
+              <strong>Nom :</strong>
+          </div>
+          <div class="col-xs-12 col-md-10">
+              {{worker.name|uppercase}}
+          </div>
+          <div class="col-xs-12 col-md-2">
+            <strong>Prénom :</strong>
+        </div>
+        <div class="col-xs-12 col-md-10">
+            {{worker.firstname}}
+        </div>
+          <div class="col-xs-12 col-md-2">
+              <strong>Pseudo :</strong>
+          </div>
+          <div class="col-xs-12 col-md-10">
+              {{worker.username}}
+          </div>
+      </div>
+      <div class="row">    
+          <div class="col-xs-12 col-md-10">
+              <strong>Date de naissance : </strong>
+          </div>
+          <div class="col-xs-12 col-md-10">
+              {{worker.birthdate}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-md-2">
+            <strong>Adresse :</strong>
+        </div>
+        <div class="col-xs-12 col-md-10">
+            {{worker.adress}}
+        </div>
+        <div class="col-xs-12 col-md-2">
+            <strong>Téléphone :</strong>
+        </div>
+        <div class="col-xs-12 col-md-10">
+            {{worker.phonenumber}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-2">
+            <strong>E-Mail :</strong>
+        </div>
+        <div class="col-xs-12 col-md-10">
+            {{worker.mailto}}
+        </div>
+        <div class="col-xs-12 col-md-2">
+            <strong>Poste :</strong>
+        </div>
+        <div class="col-xs-12 col-md-10">
+            {{worker.position}}
+        </div>
+
+      </div>
+      <div class="mt-5">
+          <a routerLink="/updateworker/{{worker._id}}" class="btn btn-primary">Modifier cet utilisateur</a>
+          <button type="button" name="button" class="btn btn-danger" (click)="deleteWorker(worker.id)">Supprimer cet utilisateur</button>
+      </div>
+
+</div>

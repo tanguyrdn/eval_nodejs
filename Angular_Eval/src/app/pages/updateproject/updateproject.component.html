@@ -1,0 +1,63 @@
+<!-- formulaire pour update -->
+<form *ngIf="project">
+
+    <div class="row">
+  
+      <div class="col">
+          <div class="form-group">
+              <label>Nom du projet</label>
+              <!-- ici, pour récupérer la valeur du nom dans le formulaire, on utiliser [value], pour récupérer la modification, on utilise (onchange) -->
+              <input type="text" class="form-control" placeholder="Nom" [value]="project.name" (change)="formUpdate.name = $event.target.value">
+          </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+          <div class="form-group">
+              <label>Description</label>
+  
+              <!-- voir "value" et "(change)" -->
+              <input type="text" class="form-control" placeholder="Description" [value]="project.description" (change)="formUpdate.description = $event.target.value">
+          </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+          <div class="form-group">
+              <label>Date de début</label>
+              <input type="date" class="form-control" placeholder="" [value]="project.start" (change)="formUpdate.start = $event.target.value">
+          </div>
+      </div>
+      <div class="col">
+          <div class="form-group">
+              <label>Date de fin</label>
+              <input type="date" class="form-control" placeholder="" [value]="project.end" (change)="formUpdate.end = $event.target.value">
+          </div>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col">
+        <div class="form-group">
+            <label>Montant du projet</label>
+            <input type="text" class="form-control" placeholder="Montant" [value]="project.value" (change)="formUpdate.value = $event.target.value">
+        </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+        <div class="form-group">
+            <label>Statut</label>
+            <select class="form-control" [value]="project.status" (change)="formUpdate.status = $event.target.value">
+              <option>En cours</option>
+              <option>Annulé</option>
+              <option>Achevé</option>
+              <option>En prospection</option>
+            </select>
+        </div>
+    </div>
+   </div>
+  
+    <!-- bouton de modificaton, sur l'event click, on appel la fonction updateUser qui a comme argument, le userid -->
+    <button type="button" name="button" class="btn btn-info" (click)=updateProject(project.id)>modifier</button>
+  
+  </form>

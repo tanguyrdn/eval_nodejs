@@ -1,0 +1,42 @@
+<div class="customer-details" *ngIf="customer">
+
+    <h4 class="mb-5">Profil de {{customer.name|uppercase}}</h4>
+  
+        <div class="row">
+  
+            <div class="col-xs-12 col-md-2">
+                <strong>Nom de l'entreprise :</strong>
+            </div>
+            <div class="col-xs-12 col-md-10">
+                {{customer.name}}
+            </div>
+            <div class="col-xs-12 col-md-2">
+              <strong>Adresse :</strong>
+          </div>
+          <div class="col-xs-12 col-md-10">
+              {{customer.adress}}
+          </div>
+            <div class="col-xs-12 col-md-2">
+                <strong>Contact référent :</strong>
+            </div>
+            <div>
+                {{customer.contact.name|uppercase}} {{customer.contact.firstname}}
+                <br>tel : {{customer.contact.phonenumber}}
+                <br>mail : {{customer.contact.mailto}} 
+            </div>
+        </div>
+        <div class="row">    
+            <div class="col-xs-12 col-md-10">
+                <strong>Secteur d'activité :</strong>
+            </div>
+            <div class="col-xs-12 col-md-10">
+                {{customer.position}}
+            </div>
+          </div>
+          
+        <div class="mt-5">
+            <a routerLink="/updatecustomer/{{customer._id}}" class="btn btn-primary">Modifier ce client</a>
+            <button type="button" name="button" class="btn btn-danger" (click)="deleteCustomer(customer.id)">Supprimer ce client</button>
+        </div>
+  
+  </div>

@@ -1,0 +1,38 @@
+<h1>Liste des clients</h1>
+
+<div class="counter" *ngIf="customers">
+    <p>{{customers.length}} salarié(s)</p>
+</div>
+
+<div class="mt-5 mb-5">
+    <a routerLink='/createcustomer' class="btn btn-info"><i class="fas fa-user-plus"></i></a>
+</div>
+
+<table class="table">
+
+    <tr>
+        <td>Nom</td>
+        <td>Adresse</td>
+        <td>Contact référent</td>
+        <td>Secteur d'activité</td>
+        <td></td>
+    </tr>
+
+    <tbody>
+        <tr *ngFor="let customer of customers">
+            <td>{{customer.name}}</td>
+            <td>{{customer.adress}}</td>
+            <td>Nom : {{customer.contact.name|uppercase}} {{customer.contact.firstname}}
+                <br>Téléphone : {{customer.contact.phonenumber}}
+                <br>E-Mail : {{customer.contact.mailto}}
+            </td>
+            <td>{{customer.position}}</td>
+            <td>
+                <a routerLink="/customer/{{customer._id}}" class="btn btn-primary"><i class="fas fa-user"></i></a>
+                <a routerLink="/updatecustomer/{{customer._id}}" class="btn btn-secondary"><i class="fas fa-pen"></i></a>
+                <button type="button" name="button" class="btn btn-danger" (click)="deleteCustomer(customer._id)"><i class="fas fa-times"></i></button>
+            </td>
+        </tr>
+    </tbody>
+
+</table>

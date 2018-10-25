@@ -1,0 +1,65 @@
+<!-- formulaire de création d'un customer -->
+<form>
+  <div class="row">
+
+      <div class="col">
+        <h1>Entreprise</h1>
+          <div class="form-group">
+             <label>Nom</label> 
+
+              <!-- voir "value" et "(change)" -->
+              <input type="text" class="form-control" placeholder="Nom" [value]="formCreate.name" (change)="formCreate.name = $event.target.value">
+          </div>
+      </div>
+
+  </div>
+  <div class="row">
+      <div class="col">
+          <div class="form-group">
+              <label>Adresse</label>
+              <input type="text" class="form-control" placeholder="Adresse" [value]="formCreate.adress" (change)="formCreate.adress = $event.target.value">
+          </div>
+      </div>
+    </div>
+  <div class="row">
+      <div class="col">
+        <h1>Coordonnées du contact référent</h1>
+          <div class="form-group">
+              <label>Nom</label>
+              <input type="text" class="form-control" placeholder="Nom" [value]="formCreate.contact.name" (change)="formCreate.contact.name = $event.target.value">
+          </div>
+      </div>
+      <div class="col">
+          <div class="form-group">
+              <label>Prénom</label>
+              <input type="text" class="form-control" placeholder="Prénom" [value]="formCreate.contact.firstname" (change)="formCreate.contact.firstname = $event.target.value">
+          </div>
+      </div>
+  </div>
+  
+  <div class="row">
+    <div class="col">
+        <div class="form-group">
+            <label>N° de téléphone</label>
+            <input type="text" class="form-control" placeholder="Numéro de téléphone" [value]="formCreate.contact.phonenumber" (change)="formCreate.contact.phonenumber = $event.target.value">
+        </div>
+    </div>
+    <div class="col">
+        <div class="form-group">
+            <label>Adresse Mail</label>
+            <input type="text" class="form-control" placeholder="E-Mail" [value]="formCreate.contact.mailto" (change)="formCreate.contact.mailto = $event.target.value">
+        </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+        <div class="form-group">
+            <h1>Secteur d'activité</h1>
+            <input type="text" class="form-control" placeholder="Secteur d'activité" [value]="formCreate.position" (change)="formCreate.position = $event.target.value">
+        </div>
+    </div>
+  </div> 
+  <!-- bouton d'ajout, utiliser la fonction (click) -->
+  <button type="button" name="button" class="btn btn-info" (click)=createCustomer()>Ajouter</button>
+
+</form>
